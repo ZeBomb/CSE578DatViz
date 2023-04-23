@@ -578,7 +578,7 @@ document.addEventListener("week-change", (e) => {
 });
 
 Promise.all([
-  d3.csv("../Data/WagesExpenses.csv", (d) => {
+  d3.csv("./Data/WagesExpenses.csv", (d) => {
     return {
       participantId: +d.participantId,
       weeks: +d.weeks,
@@ -591,7 +591,7 @@ Promise.all([
       savings: +d.savings,
     };
   }),
-  d3.csv("../Data/ParticipantLocations.csv", (d) => {
+  d3.csv("./Data/ParticipantLocations.csv", (d) => {
     let coords = d.participant_location.match(/([-+]?[\d.]+)\s([-+]?[\d.]+)/);
     return {
       participantId: +d.participantId,
